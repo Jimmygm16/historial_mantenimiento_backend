@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/v1/prueba', [App\Http\Controllers\api\v1\ComputerController::class, 'list']);
 //ruta para el crud de usuarios
 Route::apiResource('/v1/users',App\Http\Controllers\api\v1\UserController::class);
+
+// Category CRUD
+Route::apiResource('/v1/categories', App\Http\Controllers\api\v1\CategoryController::class);
