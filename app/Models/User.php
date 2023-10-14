@@ -10,6 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
+
+//sdsjsjdsoajdao
 {
     use HasApiTokens, HasFactory, Notifiable;
 
