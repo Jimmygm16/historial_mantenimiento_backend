@@ -4,19 +4,19 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Computer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ComputerController extends Controller
 {
-    public function list(){
-        return Computer::all();
-    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $computers = Computer::all();
+        return $computers;
     }
 
     /**
@@ -24,7 +24,10 @@ class ComputerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $computer = COmputer::create($request->all());
+        return response()->json([
+            "data" => $computer,
+        ], 201);
     }
 
     /**
@@ -32,7 +35,9 @@ class ComputerController extends Controller
      */
     public function show(Computer $computer)
     {
-        //
+        return response()->json([
+            'data' => $computer,
+        ], 200);
     }
 
     /**
@@ -40,7 +45,10 @@ class ComputerController extends Controller
      */
     public function update(Request $request, Computer $computer)
     {
-        //
+        $computer->update($request->all());
+        return response()->json([
+            'data' => $computer,
+        ], 200);
     }
 
     /**
@@ -48,6 +56,7 @@ class ComputerController extends Controller
      */
     public function destroy(Computer $computer)
     {
-        //
+        $computer->delete();
+        return response()->json(null, 204);
     }
 }
