@@ -13,8 +13,8 @@ class Category extends Model
         'name',
     ];
 
-    // public function observations(): HasMany
-    // {
-    //     return $this->hasMany(Comment::class, 'category');
-    // }
+    public function observations(): HasMany
+    {
+        return $this->hasMany(Observation::class, 'observations');
+    }
 }
