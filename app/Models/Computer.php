@@ -19,6 +19,5 @@ class Computer extends Model
         'brand',
         'ram',
         'cpu'
-
     ];
 }
