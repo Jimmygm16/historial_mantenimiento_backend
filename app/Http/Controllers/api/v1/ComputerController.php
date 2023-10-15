@@ -57,6 +57,6 @@ class ComputerController extends Controller
     public function destroy(Computer $computer)
     {
         $computer->delete();
-        return response()->json(null, 204);
+        return response()->json("Eli", 204);
     }
 }

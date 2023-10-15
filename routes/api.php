@@ -24,3 +24,9 @@ Route::apiResource('/v1/users',App\Http\Controllers\api\v1\UserController::class
 
 // Category CRUD
 Route::apiResource('/v1/categories', App\Http\Controllers\api\v1\CategoryController::class);
+
+Route::apiResource('/v1/computers', App\Http\Controllers\api\v1\ComputerController::class);
+
+Route::apiResource('/v1/observations', App\Http\Controllers\api\v1\ObservationController::class);
+
+Route::apiResource('v1/categories', App\Http\Controllers\api\v1\CategoryController::class);

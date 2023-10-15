@@ -13,6 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+        Category::unguard();
         Category::create([
             'name' => 'Instalación de software',
         ]);
@@ -25,5 +26,6 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Cambio de hardware',
         ]);
+        Category::reguard();
     }
 }
