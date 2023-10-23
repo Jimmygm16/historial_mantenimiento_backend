@@ -12,8 +12,8 @@ class Observation extends Model
 
     protected $fillable = [
         'message',
-        'creation_date',
-        'update_date',
+        'user',
+        'category'
     ];
 
     public function category(): BelongsTo{

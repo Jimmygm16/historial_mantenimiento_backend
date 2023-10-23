@@ -15,7 +15,8 @@ class Computer extends Model
         'name',
         'brand',
         'ram',
-        'cpu'
+        'cpu',
+        'owner'
     ];
 
     public function users(): BelongsTo{

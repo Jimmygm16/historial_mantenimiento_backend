@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('observations', function (Blueprint $table) {
             $table->id();
             $table->string('message', 300);
-            $table->timestamp('update_date')->nullable();
-            $table->timestamp('creation_date');
             $table->foreignid('user')->nullable();
             $table->foreignid('computer')->nullable();
             $table->foreignid('category')->nullable();
