@@ -23,10 +23,17 @@ Route::get('/v1/prueba', [App\Http\Controllers\api\v1\ComputerController::class,
 Route::apiResource('/v1/users',App\Http\Controllers\api\v1\UserController::class);
 
 // Category CRUD
+//Categories
 Route::apiResource('/v1/categories', App\Http\Controllers\api\v1\CategoryController::class);
 
+//Computers
 Route::apiResource('/v1/computers', App\Http\Controllers\api\v1\ComputerController::class);
 
-Route::apiResource('/v1/observations', App\Http\Controllers\api\v1\ObservationController::class);
-
+//Observations
+Route::apiResource('/v1/computers.observations', App\Http\Controllers\api\v1\ObservationController::class);
+Route::get('v1/computers/{computer_id}/observations/{observation_id}', App\Http\Controllers\api\v1\ObservationController::class.'@show');
+Route::post('v1/computers/{computer_id}/observations', App\Http\Controllers\api\v1\ObservationController::class.'@store');
+Route::put('v1/computers/{computer_id}/observations/{observation_id}', App\Http\Controllers\api\v1\ObservationController::class.'@update');
+Route::delete('v1/computers/{computer_id}/observations/{observation_id}', App\Http\Controllers\api\v1\ObservationController::class.'@destroy');
+//
 Route::apiResource('v1/categories', App\Http\Controllers\api\v1\CategoryController::class);

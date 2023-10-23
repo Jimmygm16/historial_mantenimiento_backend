@@ -12,7 +12,6 @@ class Observation extends Model
 
     protected $fillable = [
         'message',
-        'computer',
         'user',
         'category'
     ];

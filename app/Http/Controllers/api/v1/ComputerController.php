@@ -19,12 +19,13 @@ class ComputerController extends Controller
         return $computers;
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $computer = COmputer::create($request->all());
+        $computer = Computer::create($request->all());
         return response()->json([
             "data" => $computer,
         ], 201);
