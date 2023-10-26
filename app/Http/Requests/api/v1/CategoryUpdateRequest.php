@@ -4,7 +4,7 @@ namespace App\Http\Requests\api\v1;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserStoreRequest extends FormRequest
+class CategoryUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,17 @@ class UserStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'    =>'required|regex:/^[\pL\s]+$/u|max:255|min:7|string',
-            'email'   =>'required|max:255|min:7|string|email|unique:users,email',
-            'password'=>'required|min:8|max:255|string'
+            'name' => 'required|string|max:255|regex:/^[\pL\pM\s]+$/u',
         ];
     }
 
-    public function messages():array
+    public function messages(): array
     {
-        return[
-            'name.required' => 'El nombre es requerido',
-            'name.max' => 'El nombre no puede tener mas de 255 caracteres'
+        return [
+            'name.required' => 'El campo nombre es requerido',
+            'name.string' => 'El campo nombre debe ser una cadena de caracteres',
+            'name.max' => 'El campo nombre debe tener un máximo de 255 caracteres',
+            'name.regex' => 'El campo nombre debe contener solo letras'
         ];
     }
 }
