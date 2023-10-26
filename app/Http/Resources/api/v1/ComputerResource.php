@@ -15,11 +15,12 @@ class ComputerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'brand' => $this->brand,
-            'ram' => $this->ram,
-            'cpu' => $this->cpu,
+            'computer_code' => $this->id,
+            'ubication' => $this->name,
+            'computer_brand' => $this->brand,
+            'ram_memory' => $this->ram,
+            'processor' => $this->cpu,
+            'computer_owner' => $this->owner,
             'creation_date' => $this->updated_at,
         ];
     }
