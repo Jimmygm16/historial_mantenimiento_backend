@@ -4,8 +4,8 @@ namespace App\Http\Resources\api\v1;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\api\v1\ComputerResource;
-class UserResource extends JsonResource
+
+class ComputerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,9 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->email,
-            'computers' => ComputerResource::collection($this->computers),
+            'brand' => $this->brand,
+            'ram' => $this->ram,
+            'cpu' => $this->cpu,
             'creation_date' => $this->updated_at,
         ];
     }
