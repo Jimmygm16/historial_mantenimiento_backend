@@ -35,8 +35,9 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(string $category_id)
     {
+        $category = Category::findOrFail($category_id);
         return response()->json([
             'data' => new CategoryResource($category),
         ], 200);
