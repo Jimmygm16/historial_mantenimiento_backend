@@ -37,8 +37,9 @@ class ComputerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Computer $computer)
+    public function show(string $computer_id)
     {
+        $computer = Computer::findOrFail($computer_id);
         return response()->json([
             'data' => new ComputerResource($computer),
         ], 200);
